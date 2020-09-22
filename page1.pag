@@ -1,0 +1,159 @@
+VERSION 5.00
+Begin VB.PropertyPage page1 
+   Caption         =   "îàôééðéí"
+   ClientHeight    =   3600
+   ClientLeft      =   0
+   ClientTop       =   0
+   ClientWidth     =   6030
+   PaletteMode     =   0  'Halftone
+   ScaleHeight     =   3600
+   ScaleWidth      =   6030
+   Begin VB.TextBox txtID_Field 
+      Height          =   330
+      Left            =   3000
+      TabIndex        =   11
+      Top             =   370
+      Width           =   2700
+   End
+   Begin VB.TextBox txtFather_Field 
+      Height          =   330
+      Left            =   90
+      TabIndex        =   9
+      Top             =   2970
+      Width           =   2700
+   End
+   Begin VB.TextBox txtTable_Name 
+      Height          =   330
+      Left            =   90
+      TabIndex        =   7
+      Top             =   2320
+      Width           =   2700
+   End
+   Begin VB.TextBox txtFirstHeader 
+      Height          =   330
+      Left            =   90
+      TabIndex        =   5
+      Top             =   1670
+      Width           =   2700
+   End
+   Begin VB.TextBox txtName_Field 
+      Height          =   330
+      Left            =   90
+      TabIndex        =   3
+      Top             =   1020
+      Width           =   2700
+   End
+   Begin VB.TextBox txtRootName 
+      Height          =   330
+      Left            =   90
+      TabIndex        =   1
+      Top             =   370
+      Width           =   2700
+   End
+   Begin VB.Label lblID_Field 
+      Caption         =   "ID_Field:"
+      Height          =   240
+      Left            =   3000
+      TabIndex        =   10
+      Top             =   120
+      Width           =   2700
+   End
+   Begin VB.Label lblFather_Field 
+      Caption         =   "Father_Field:"
+      Height          =   240
+      Left            =   90
+      TabIndex        =   8
+      Top             =   2720
+      Width           =   2700
+   End
+   Begin VB.Label lblTable_Name 
+      Caption         =   "Table_Name:"
+      Height          =   240
+      Left            =   90
+      TabIndex        =   6
+      Top             =   2070
+      Width           =   2700
+   End
+   Begin VB.Label lblFirstHeader 
+      Caption         =   "FirstHeader:"
+      Height          =   240
+      Left            =   90
+      TabIndex        =   4
+      Top             =   1420
+      Width           =   2700
+   End
+   Begin VB.Label lblName_Field 
+      Caption         =   "Name_Field:"
+      Height          =   240
+      Left            =   90
+      TabIndex        =   2
+      Top             =   770
+      Width           =   2700
+   End
+   Begin VB.Label lblRootName 
+      Caption         =   "RootName:"
+      Height          =   240
+      Left            =   90
+      TabIndex        =   0
+      Top             =   120
+      Width           =   2700
+   End
+End
+Attribute VB_Name = "page1"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = False
+Option Explicit
+
+Private Sub txtID_Field_Change()
+    Changed = True
+End Sub
+
+
+Private Sub txtFather_Field_Change()
+    Changed = True
+End Sub
+
+
+Private Sub txtTable_Name_Change()
+    Changed = True
+End Sub
+
+
+Private Sub txtFirstHeader_Change()
+    Changed = True
+End Sub
+
+
+Private Sub txtName_Field_Change()
+    Changed = True
+End Sub
+
+
+Private Sub txtRootName_Change()
+    Changed = True
+End Sub
+
+
+Private Sub PropertyPage_ApplyChanges()
+    SelectedControls(0).ID_Field = txtID_Field.Text
+    SelectedControls(0).Father_Field = txtFather_Field.Text
+    SelectedControls(0).Table_Name = txtTable_Name.Text
+    SelectedControls(0).FirstHeader = txtFirstHeader.Text
+    SelectedControls(0).Name_Field = txtName_Field.Text
+    SelectedControls(0).RootName = txtRootName.Text
+End Sub
+
+
+
+Private Sub PropertyPage_SelectionChanged()
+    txtID_Field.Text = SelectedControls(0).ID_Field
+    txtFather_Field.Text = SelectedControls(0).Father_Field
+    txtTable_Name.Text = SelectedControls(0).Table_Name
+    txtFirstHeader.Text = SelectedControls(0).FirstHeader
+    txtName_Field.Text = SelectedControls(0).Name_Field
+    txtRootName.Text = SelectedControls(0).RootName
+End Sub
+
+
